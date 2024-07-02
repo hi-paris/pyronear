@@ -5,7 +5,7 @@ Goal: Yolov10 model trained on Pyronear Dataset with parameters of configuration
  saved thanks to mlflow. This code outputs the artifacts of the top model in aws.
 """
 
-# 01 - Import Libraries
+# 01 -Import Libraries
 
 import argparse
 import os
