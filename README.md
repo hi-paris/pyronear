@@ -118,7 +118,7 @@ The "Pre-trained" component utilizes an already trained ESRGAN model implemented
 
 ![alt text](image.png)
 
-## ** 3️⃣ Hyperparameter Tuning with random search **
+## **3️⃣ Hyperparameter Tuning with random search**
 
 In this section, the focus is on optimizing the parameters for Albumentations data augmentation techniques to achieve a higher Mean Average Precision (MAP) score for the model. Data augmentation plays a crucial role in enhancing the diversity of training data and improving the robustness of machine learning models. However, finding the best combination of augmentation parameters can be challenging and time-consuming.
 
@@ -132,12 +132,12 @@ To address this, a random search approach is employed for hyperparameter tuning.
 
 - Select the Best Parameters: Identify the parameter set that yields the highest MAP score. These optimal parameters will be used for data augmentation in the final training process.
 
-## ** 4️⃣ Data augmentation with albumentations**
+## **4️⃣ Data augmentation with albumentations**
 
 
 https://albumentations.ai/docs/getting_started/bounding_boxes_augmentation/#yolo
 
-## ** 5️⃣ Training yolov10 **
+## **5️⃣ Training yolov10**
 
 https://docs.ultralytics.com/models/yolov10/#usage-examples
 
