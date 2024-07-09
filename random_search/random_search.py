@@ -96,3 +96,4 @@ img_display = np.clip(img_display * 255, 0, 255).astype(np.uint8)
 cv2.imshow('Detection results', img_display)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
