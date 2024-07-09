@@ -116,7 +116,8 @@ The "Pre-trained" component utilizes an already trained ESRGAN model implemented
 - Inference: Using this model to perform super-resolution on new, unseen low-resolution images. The pre-trained model has already learned to enhance images from extensive training on large datasets, enabling quick and effective super-resolution.
 - Comparison: Comparing the performance and output quality of the pre-trained model with the custom-trained model. This helps in understanding the benefits and limitations of each approach.
 
-![alt text](image.png)
+![image](https://github.com/hi-paris/pyronear/assets/108234726/ebf81ce6-a9bb-4b1e-98f6-d865b676bc05)
+
 
 ## **3️⃣ Hyperparameter Tuning with random search**
 
