@@ -29,6 +29,12 @@ This project incorporates a variety of advanced image processing techniques, spe
 - **Hyperparameter Tuning**: Optimizes the performance of machine learning models by systematically searching for the most effective combination of parameters. This process ensures that the models perform optimally under various conditions.
 Here, we are going to use Random search.
 
+- **Data augmentation with albumentation** : 
+
+
+- **Training yolov10** : 
+
+
 These components are integrated into the Pyronear project to enhance its effectiveness in detecting forest smoke, ultimately aiming to provide faster and more reliable fire detection solutions.
 
 ---
@@ -86,11 +92,56 @@ process_image(image_path, label_path, class_names)
 Utilizes a pre-trained ESRGAN model and a from-scratch ESRGAN model for enhancing image resolution.
 
 ### From Scratch 
+The "From Scratch" component involves training an ESRGAN model from the ground up using our dataset. This process includes several key scripts and modules
 
+The following scripts are essential for the from-scratch ESRGAN model:
+
+- config.py: Contains the configuration settings for the model, including hyperparameters, paths, and other essential parameters for training and evaluation.
+
+- dataset.py: Manages the loading and preprocessing of the dataset. This script handles the creation of low-resolution and high-resolution image pairs required for training the ESRGAN model.
+
+- loss.py: Defines the loss functions used in training, including the adversarial loss, perceptual loss, and pixel-wise loss, which guide the generator and discriminator during the training process.
+
+- model.py: Implements the architecture of the ESRGAN model, including the generator and discriminator networks.
+
+- train.py: The main training script that orchestrates the training process. It initializes the model, loads the dataset, and iteratively updates the model weights based on the defined loss functions.
+
+- utils.py: Contains utility functions that support various tasks such as image transformations, checkpoint saving and loading, and performance metric calculations.
 
 ### Pre-trained (Tensorflow)
 
----
+The "Pre-trained" component utilizes an already trained ESRGAN model implemented in Tensorflow. This approach includes:
+
+- Model Integration: Integrating a pre-trained Tensorflow ESRGAN model into our project.
+- Inference: Using this model to perform super-resolution on new, unseen low-resolution images. The pre-trained model has already learned to enhance images from extensive training on large datasets, enabling quick and effective super-resolution.
+- Comparison: Comparing the performance and output quality of the pre-trained model with the custom-trained model. This helps in understanding the benefits and limitations of each approach.
+
+![image](https://github.com/hi-paris/pyronear/assets/108234726/ebf81ce6-a9bb-4b1e-98f6-d865b676bc05)
+
+
+## **3️⃣ Hyperparameter Tuning with random search**
+
+In this section, the focus is on optimizing the parameters for Albumentations data augmentation techniques to achieve a higher Mean Average Precision (MAP) score for the model. Data augmentation plays a crucial role in enhancing the diversity of training data and improving the robustness of machine learning models. However, finding the best combination of augmentation parameters can be challenging and time-consuming.
+
+To address this, a random search approach is employed for hyperparameter tuning. This method involves the following steps:
+
+- Define the Search Space: Specify the range of possible values for each augmentation parameter. This includes various transformations like rotation, scaling, shifting, and flipping, among others.
+
+- Random Sampling: Randomly sample a set of parameters from the defined search space. This helps explore a wide variety of combinations without being biased towards any specific region of the space.
+
+- Evaluate Performance: For each set of sampled parameters, train the model and evaluate its performance using the Mean Average Precision (MAP) score. This score measures the precision of the model across different recall levels, providing a comprehensive evaluation of its accuracy.
+
+- Select the Best Parameters: Identify the parameter set that yields the highest MAP score. These optimal parameters will be used for data augmentation in the final training process.
+
+## **4️⃣ Data augmentation with albumentations**
+
+
+https://albumentations.ai/docs/getting_started/bounding_boxes_augmentation/#yolo
+
+## **5️⃣ Training yolov10**
+
+https://docs.ultralytics.com/models/yolov10/#usage-examples
+
 ## Licence 📜
 
 MIT License
