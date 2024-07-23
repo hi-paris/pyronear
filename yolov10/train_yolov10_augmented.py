@@ -1,7 +1,5 @@
 # train.py
 """
-Authors: Matéo Lostanlen & Gaëtan Brison
-Date: 22 Dec 2024
 Goal: Yolov10 model trained on Pyronear Dataset with parameters of configuration
 saved thanks to mlflow. This code outputs the artifacts of the top model in aws.
 """
@@ -59,10 +57,9 @@ def upload_directory_to_s3(bucket_name, directory_name, s3_folder):
     return print("mlruns uploaded on aws")
 
 # Define the random search space and functions
-
 space = {
     "model_type": np.array(["yolov10n"]),
-    "epochs": np.linspace(10, 20, 1, dtype=int),
+    "epochs": np.linspace(10, 30, 1, dtype=int),
     "patience": np.linspace(10, 50, 10, dtype=int),
     "imgsz": np.array([320, 640, 1024], dtype=int),
     "batch": np.array([16, 32, 64]),
@@ -129,6 +126,7 @@ yolo_params = {
     "lrf": random_config["lrf"],
     "mixup": random_config["mixup"],
     "close_mosaic": random_config["close_mosaic"],
+    #Data augmentation
     "degrees": random_config["degrees"],
     "translate": random_config["translate"],
     "scale": random_config["scale"],
