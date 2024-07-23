@@ -3,7 +3,7 @@ import numpy as np
 
 space = {
     "model_type": np.array(["yolov10n"]),
-    "epochs": np.linspace(50, 200, 20, dtype=int),
+    "epochs": np.linspace(10, 30, 1, dtype=int),
     "patience": np.linspace(10, 50, 10, dtype=int),
     "imgsz": np.array([320, 640, 1024], dtype=int),
     "batch": np.array([16, 32, 64]),
@@ -31,7 +31,7 @@ space = {
         base=10,
         num=50,
     ),
-    # Data Augmentation
+    #Data Augmentation
     "mixup": np.array([0, 0.2]),
     "close_mosaic": np.linspace(0, 35, 10, dtype=int),
     "degrees": np.linspace(0, 10, 10),
